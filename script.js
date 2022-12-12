@@ -1,4 +1,6 @@
 var playStart = true;
+var totalScoreP = 0;
+var totalScoreC = 0;
 play();
 
 
@@ -16,12 +18,15 @@ function play(){
             }
         }
         console.log(`You: ${scoreP}\nComputer: ${scoreC}`);
+        totalScoreP += scoreP;
+        totalScoreC += scoreC;
         if(confirm('Do you want to play another round?')){
             playStart = true;
             scoreC = 0;
             scoreP = 0;
         }
         else{
+            console.log(`The total score:\nYou: ${totalScoreP}\nComputer: ${totalScoreC}`);
             playStart = false;
         }
     }while(playStart !== false)
